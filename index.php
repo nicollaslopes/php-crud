@@ -30,7 +30,7 @@
             </div>
                 <button type="submit" class="btn btn-primary">Entrar</button>
                 
-                <a class="btn btn-primary" href="view/registra.html">Registrar</a>
+                <a class="btn btn-primary" href="view/registra.php">Registrar</a>
         </form>
     </div>
     
