@@ -21,12 +21,23 @@
 
         public function verificaLogin($login, $senha){
 
-            $con::Conexao();
-            $con = $con->conecta();
-            $stmt = $con->prepare("SELECT * FROM administrador WHERE login = :login");
+            $obj = new Conexao();
+            $con = $obj->conecta();
+            $stmt = $con->prepare("SELECT * FROM administrador WHERE login = :login and senha = :senha");
 
             $stmt->bindParam(':login', $login);
+            $stmt->bindParam(':senha', $senha);
             $stmt->execute();
+
+            if($stmt->rowCount()){
+                $_SESSION['online'] = true;
+                header('Location: ../view/painel.php');
+                return true;
+            } else {
+                $_SESSION['online'] = false;
+                header('Location: ../index.php');
+                return false;
+            }
 
             
         }   
