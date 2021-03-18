@@ -10,7 +10,7 @@
 
         public function conecta(){
             try {
-                $this->con = new PDO('mysql:host=$host;dbname=$crud', $this->usuario, $this->senha);
+                $this->con = new PDO("mysql:host=$this->host;dbname=$this->db", $this->usuario, $this->senha);
                 
             } catch (PDOException $e) {
                 echo "Erro: " . $e->getMessage();
