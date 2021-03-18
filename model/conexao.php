@@ -19,4 +19,16 @@
             return $this->con;
         }
 
+        public function verificaLogin($login, $senha){
+
+            $con::Conexao();
+            $con = $con->conecta();
+            $stmt = $con->prepare("SELECT * FROM administrador WHERE login = :login");
+
+            $stmt->bindParam(':login', $login);
+            $stmt->execute();
+
+            
+        }   
+
     }
