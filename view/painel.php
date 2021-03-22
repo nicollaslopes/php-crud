@@ -34,6 +34,23 @@
             <th scope="col">Cargo</th>
             </tr>
         </thead>
+
+        <tr>
+        <th scope="row">Teste</th>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>*Excluir*</td>
+            <td>*Atualizar*</td>
+        </tr>
+        <?php
+            require_once '../controller/actions.php';
+            $a = new Actions();
+            $obj = $a->listaUsuarios();
+            var_dump($obj);
+        ?>
+
         </div>
 
 
