@@ -12,6 +12,7 @@
     <title>Painel de administração</title>
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/footer.css" rel="stylesheet">
     <script src="../assets/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -20,7 +21,22 @@
     <body>
         <?php require_once 'menu.html';?>
 
+        <div id="conteudo">
+
+        <table class="table table-hover">
+
+        <thead>
+            <tr>
+            <th scope="col">ID do funcionário</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Salário</th>
+            <th scope="col">Data de nascimento</th>
+            <th scope="col">Cargo</th>
+            </tr>
+        </thead>
+        </div>
 
 
+        <?php require_once 'footer.html';?>
     </body>
 </html>
