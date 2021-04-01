@@ -1,7 +1,6 @@
 <?php
     require_once '../model/conexao.php';
 
-
     class Actions{
 
         private $con;

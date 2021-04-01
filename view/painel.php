@@ -1,9 +1,14 @@
 <?php
     require_once '../model/util.php';
+    require_once '../controller/actions.php';
 
     $obj = new Util();
     $verifica = $obj->verificaSeLoginValido();
+
+    $obj = new Actions();
+    $usuarios = $obj->listaUsuarios();
 ?>
+
 <!DOCTYPE html>
 
     <head>
@@ -35,21 +40,22 @@
             </tr>
         </thead>
 
+        <?php
+            foreach($usuarios as $usuario){
+        ?>
+
         <tr>
-        <th scope="row">Teste</th>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
+        <th scope="row"><?=$usuario['id_funcionario']?></th>
+            <td><?=$usuario['nome']?></td>
+            <td><?=$usuario['salario']?></td>
+            <td><?=$usuario['dt_nascimento']?></td>
+            <td><?=$usuario['cargo']?></td>
             <td>*Excluir*</td>
             <td>*Atualizar*</td>
         </tr>
-        <?php
-            require_once '../controller/actions.php';
-            $a = new Actions();
-            $obj = $a->listaUsuarios();
-            var_dump($obj);
-        ?>
+
+        <?php } ?>
+
 
         </div>
 
