@@ -53,15 +53,19 @@
                 <td><?=$usuario['cargo']?></td>
                 <td>
                     <button type="button" class="btn btn-danger" 
-                    data-toggle="modal" data-target="#exampleModal" data-whatever="<?=$usuario['id_funcionario'];?>">Excluir</button>
+                    data-toggle="modal" data-target="#modalExclusao" data-whatever="<?=$usuario['id_funcionario'];?>">Excluir</button>
                 
                     <?php require_once('../view/modalExclusao.php');?>
                 
                 </td>
 
-                <td>*Atualizar*</td>
+                <td>
+                    <button type="button" class="btn btn-warning" 
+                    data-toggle="modal" data-target="#modalAtualizacao" data-whatever="<?=$usuario['id_funcionario'];?>"> Atualizar </button>
+
+                    <?php require_once('../view/modalAtualizacao.php');?>
+                </td>
             </tr>
-            
 
         <?php } ?>
 
