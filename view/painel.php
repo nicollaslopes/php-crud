@@ -42,17 +42,26 @@
 
         <?php
             foreach($usuarios as $usuario){
+                $data_nascimento = date('d/m/Y', strtotime($usuario['dt_nascimento']));
         ?>
 
-        <tr>
-        <th scope="row"><?=$usuario['id_funcionario']?></th>
-            <td><?=$usuario['nome']?></td>
-            <td><?=$usuario['salario']?></td>
-            <td><?=$usuario['dt_nascimento']?></td>
-            <td><?=$usuario['cargo']?></td>
-            <td>*Excluir*</td>
-            <td>*Atualizar*</td>
-        </tr>
+            <tr>
+            <th scope="row"><?=$usuario['id_funcionario']?></th>
+                <td><?=$usuario['nome']?></td>
+                <td><?=$usuario['salario']?></td>
+                <td><?=$data_nascimento?></td>
+                <td><?=$usuario['cargo']?></td>
+                <td>
+                    <button type="button" class="btn btn-danger" 
+                    data-toggle="modal" data-target="#exampleModal" data-whatever="<?=$usuario['id_funcionario'];?>">Excluir</button>
+                
+                    <?php require_once('../view/modalExclusao.php');?>
+                
+                </td>
+
+                <td>*Atualizar*</td>
+            </tr>
+            
 
         <?php } ?>
 
