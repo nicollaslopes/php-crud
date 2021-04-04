@@ -11,8 +11,8 @@ $query = $con->prepare("DELETE FROM funcionario WHERE id_funcionario = :idfuncio
 $query->bindParam(":idfuncionario", $idfuncionario);
 $stmt = $query->execute();
 
-$url_retorno = $_SERVER['HTTP_REFERER'];
+$urlRetorno = $_SERVER['HTTP_REFERER'];
 
-header("Location: $url_retorno");
+header("Location: $urlRetorno");
 
 ?>

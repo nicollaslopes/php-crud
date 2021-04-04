@@ -27,6 +27,6 @@ $query->bindParam(":idFuncionario", $idFuncionario);
 
 $stmt = $query->execute();
 
-$url_retorno = $_SERVER['HTTP_REFERER'];
+$urlRetorno = $_SERVER['HTTP_REFERER'];
 
-header("Location: $url_retorno");
+header("Location: $urlRetorno");
