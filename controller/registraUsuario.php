@@ -11,6 +11,8 @@ $verifica = $util->verificaExistenciaUsuario($_POST["login"]);
 
 var_dump($verifica);
 if(!$verifica){
+    session_start();
+    $_SESSION['msgErroUsuario'] = true;
     $urlRetorno = $_SERVER['HTTP_REFERER'];
     header("Location: $urlRetorno");
 } else {

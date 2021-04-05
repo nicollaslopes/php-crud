@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -19,6 +20,10 @@
                 <input type="text" id="login" class="form-control" placeholder="Usuário" required="" name="login" autofocus="">
                 <label for="senha" class="sr-only">Senha</label>
                 <input type="password" id="senha" class="form-control" placeholder="Senha" required="" name="senha">
+                <?php if(isset($_SESSION['msgErroUsuario'])) { ?>
+                    <small style="color: red">Usuario já existe!</small>
+                <?php } 
+                unset($_SESSION['msgErroUsuario']); ?> 
 
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Registrar</button>
                 
