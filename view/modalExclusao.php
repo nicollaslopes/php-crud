@@ -15,6 +15,7 @@
             <button type="submit" class="btn btn-success">Excluir</button>
           </div>
         </form>
+      </div>
     </div>
   </div>
 </div>
