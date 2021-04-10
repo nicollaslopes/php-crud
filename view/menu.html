@@ -1,14 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand">Painel Administrativo</a>
+    <a  class="navbar-brand" href="/php-crud/view/painel.php">Painel Administrativo <span class="sr-only">(current)</span></a>
+    <form action="../controller/cadastraUsuario.php" method="POST">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCadastroUsuario">Cadastrar Usuário</button>
+    </form> 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="/php-crud/view/painel.php">Home <span class="sr-only">(current)</span></a>
-        </li>
-  
+    
         <nav class="navbar navbar-light bg-light">
           <form class="form-inline" method="POST" action="busca.php" id="">
             <input class="form-control mr-sm-2" type="text" placeholder="Digite aqui" aria-label="Search" id="busca" name="busca">

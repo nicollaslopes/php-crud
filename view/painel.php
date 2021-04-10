@@ -24,6 +24,7 @@
     </head> 
     <body>
         <?php require_once 'menu.html';?>
+        <?php require_once 'modalCadastroUsuario.php'; ?>
 
         <?php
             $qtdeUsuariosBD = $objAction->quantidadeUsuarios();
@@ -65,7 +66,7 @@
                     <button type="button" class="btn btn-danger" 
                     data-toggle="modal" data-target="#modalExclusao" data-whatever="<?=$usuario['id_funcionario'];?>">Excluir</button>
                 
-                    <?php require_once('../view/modalExclusao.php');?>
+                    <?php require_once 'modalExclusao.php';?>
                 
                 </td>
 
@@ -73,7 +74,7 @@
                     <button type="button" class="btn btn-warning" 
                     data-toggle="modal" data-target="#modalAtualizacao" data-whatever="<?=$usuario['id_funcionario'];?>"> Atualizar </button>
 
-                    <?php require_once('../view/modalAtualizacao.php');?>
+                    <?php require_once 'modalAtualizacao.php';?>
                 </td>
             </tr>
 

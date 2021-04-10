@@ -24,6 +24,7 @@
     </head> 
     <body>
         <?php require_once 'menu.html';?>
+        <?php require_once 'modalCadastroUsuario.php'; ?>
 
         <?php
             $busca = isset($_POST['busca']) ? $_POST['busca'] : '';
