@@ -5,8 +5,7 @@
     $obj = new Util();
     $verifica = $obj->verificaSeLoginValido();
 
-    $obj = new Actions();
-    $usuarios = $obj->listaUsuarios();
+    $objAction = new Actions();
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +24,17 @@
     </head> 
     <body>
         <?php require_once 'menu.html';?>
+
+        <?php
+            $qtdeUsuariosBD = $objAction->quantidadeUsuarios();
+            $qtdeUsuariosBD = $qtdeUsuariosBD->rowCount();
+            $quantidadeUsuariosPorPagina = 5;
+            $pagina = isset($_GET['pagina']) ? $_GET['pagina'] : 1;
+            $paginaAtual = !($pagina) ? 1 : $pagina; 
+            $inicio = ($quantidadeUsuariosPorPagina * $pagina) - $quantidadeUsuariosPorPagina;
+            $totalPagina = $qtdeUsuariosBD / $quantidadeUsuariosPorPagina;
+            $usuarios = $objAction->listaUsuarios($inicio, $quantidadeUsuariosPorPagina);
+        ?>
 
         <div id="conteudo">
 
@@ -68,6 +78,27 @@
             </tr>
 
         <?php } ?>
+
+        <div class="footer">
+            <nav aria-label="Page navigation example">
+                <ul class="nav justify-content-end">
+                <ul class="pagination">
+                <?php
+                    
+                    $anterior = $paginaAtual -1;
+                    $proximo = $paginaAtual +1;
+
+                    if ($paginaAtual>1) {
+                    ?>
+                    <li class="page-item"><a class="page-link" href="?pagina=<?=$anterior?>">Anterior</a></li>
+                    <?php } 
+                    if ($totalPagina > $paginaAtual) { ?>
+                    <li class="page-item"><a class="page-link" href="?pagina=<?=$proximo?>">Proximo</a></li>
+                    <?php } ?>
+                </ul>
+                </ul>
+            </nav>
+        </div>
 
 
         </div>
