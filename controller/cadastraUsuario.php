@@ -44,7 +44,7 @@
         echo '    </form>';
         echo '</center>';
     } else {
-        echo "Ocorreu um erro ao cadastrar!";
+        echo "<h2>Ocorreu um erro ao cadastrar!</h2>";
     }
 
 
