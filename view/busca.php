@@ -26,14 +26,15 @@
         <?php require_once 'menu.html';?>
 
         <?php
-            $qtdeUsuariosBD = $objAction->quantidadeUsuarios();
+            $busca = isset($_POST['busca']) ? $_POST['busca'] : '';
+            $qtdeUsuariosBD = $objAction->quantidadeUsuariosBusca($busca);
             $qtdeUsuariosBD = $qtdeUsuariosBD->rowCount();
             $quantidadeUsuariosPorPagina = 10;
             $pagina = isset($_GET['pagina']) ? $_GET['pagina'] : 1;
             $paginaAtual = !($pagina) ? 1 : $pagina; 
             $inicio = ($quantidadeUsuariosPorPagina * $pagina) - $quantidadeUsuariosPorPagina;
             $totalPagina = $qtdeUsuariosBD / $quantidadeUsuariosPorPagina;
-            $usuarios = $objAction->listaUsuarios($inicio, $quantidadeUsuariosPorPagina);
+            $usuarios = $objAction->buscaUsuarios($busca, $inicio, $quantidadeUsuariosPorPagina);
         ?>
 
         <div id="conteudo">
