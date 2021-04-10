@@ -37,7 +37,6 @@
       </div>
     </div>
   </div>
-</div>
 
 <script>
     $('#modalAtualizacao').on('show.bs.modal', function (event) {
