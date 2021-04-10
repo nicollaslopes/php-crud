@@ -40,7 +40,7 @@ if(!$verifica){
 
 ?>
 <center>
-    <h2>Funcionário cadastrado!</h2>
+    <h2>Usuário cadastrado!</h2>
     <form method="GET" action="php-crud/../../index.php">
         <input type="submit" class="btn btn-primary" value="Clique aqui para voltar"">
     </form>

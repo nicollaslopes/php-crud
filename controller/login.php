@@ -2,7 +2,6 @@
 
     session_start();
 
-
     $senha = $_POST["senha"];
     $login = $_POST["login"];
 
@@ -11,5 +10,4 @@
 
     $obj = $con->verificaLogin($login, $senha);
 
-    var_dump($obj);
 
